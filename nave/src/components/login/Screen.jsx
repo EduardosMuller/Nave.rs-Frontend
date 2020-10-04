@@ -9,12 +9,11 @@ width: 1280px;
 height: 720px;
 background: #FFFFFF;
 
-
-
 `
 export default () =>
   <Screen >
     <Form></Form>
   </Screen>
+
 
 

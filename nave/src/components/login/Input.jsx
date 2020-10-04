@@ -23,7 +23,9 @@ box-sizing: border-box;
 `
 export default (props) =>
   <Input
+    onChange={e => props.setType(e.target.value)}
     type={props.type}
     placeholder={props.placeholder}
+    value={props.value}
     required>
   </Input>

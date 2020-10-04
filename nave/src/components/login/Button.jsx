@@ -38,5 +38,5 @@ z-index:1;
 
 export default () =>
 
-  <Button>Entrar</Button>
+  <Button type="submit">Entrar</Button>
 
