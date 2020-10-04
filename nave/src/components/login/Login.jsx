@@ -1,6 +1,8 @@
 import React from "react"
+import Screen from "./Screen"
 
 export default () =>
-  <div>
-    <h1>SignIn</h1>
-  </div>
+  <Screen />
+
+
+

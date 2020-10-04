@@ -1,11 +1,8 @@
 import React from 'react';
-import { BrowserRouter } from "react-router-dom"
-import Routes from "./routes/Routes"
 
+import Routes from "../routes/Routes"
 
 export default () =>
   <div>
-    <BrowserRouter>
-      <Routes />
-    </BrowserRouter>
+    <Routes />
   </div>
