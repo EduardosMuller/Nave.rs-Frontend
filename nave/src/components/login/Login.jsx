@@ -1,9 +1,5 @@
 import React from "react"
-import Screen from "./Screen"
-
+import Form from "./Form"
 
 export default () =>
-  <Screen />
-
-
-
+  <Form />

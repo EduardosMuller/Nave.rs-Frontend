@@ -1,9 +1,24 @@
-import React, { useState } from 'react';
-import { Container, Input, Button, Logo, Label, Form } from './styles'
-import logo from "../../assets/logo.png"
-import { login } from "../../api/Auth"
-import { useHistory } from "react-router-dom"
-import api from "../../api/Api"
+// import React, { useState } from "react"
+// import styled from "styled-components"
+// import Input from "./Input"
+// import Button from "./Button"
+// import Logo from "./Logo"
+// import Label from "./Label"
+// import { login } from "../../api/Auth"
+// import { useHistory } from "react-router-dom"
+// import api from "../../api/Api"
+
+// const Form = styled.form`
+// width: 448px;
+// height: 408px;
+// margin-left:auto;
+// margin-right:auto;
+// margin-top 156px;
+// border: 1px solid #212121;
+// box-sizing: border-box;
+// border-shadow: 2px 2px black
+
+// `;
 
 export default () => {
   const [email, setEmail] = useState("");
@@ -23,26 +38,26 @@ export default () => {
     }
   }
   return (
-    <Container>
+    <div>
       <Form onSubmit={handleSubmit}>
-        <Logo src={logo} alt="Nave.rs Logo" />
-        <Label htmlFor="email">E-mail</Label>
+        <Logo></Logo>
+        <Label for="email"></Label>
         <Input
           onChange={e => setEmail(e.target.value)}
           type="email"
           placeholder="Digite seu e-mail cadastrado..."
           name="email"
           value={email} />
-        <Label htmlFor="password">Password</Label>
+        <Label for="password"></Label>
         <Input
           onChange={e => setPass(e.target.value)}
           type="password"
           placeholder="Digite seu password..."
           name="password"
           value={pass} />
-        <Button>Entrar</Button>
+        <Button></Button>
       </Form>
 
-    </Container>
+    </div>
   )
 }
