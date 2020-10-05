@@ -1,34 +1,13 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import { logout } from "../../api/Auth"
-import styled from "styled-components"
+// import { logout } from "../../api/Auth"
+import { Nav, Logo, Button } from "./styles"
 
-const Nav = styled.nav`
-height: 85px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px 30px 5px;
-  margin-right: 1%;
 
-  img{
-    height: 37px
-  }
-  
-  a{
-    text-decoration:none;
-    color:white;
-    font-size: 14px
-    font-weight: 600
-  }
-`;
 
 export default () =>
   <Nav>
-    <a></a>
-    <Link className="nav-link nav-text-color hover-button " to="/logout">
-      Sair
-         </Link>
-
+    <a href="https://nave.rs/" rel="noopener noreferrer" target="_blank"><Logo src={logo} alt="Nave.rs Logo"></Logo></a>
+    <Link to="/"><Button type="submit" to="/">Sair</Button></Link>
   </Nav>
