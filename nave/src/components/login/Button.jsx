@@ -2,10 +2,10 @@ import React from "react"
 import styled from "styled-components"
 
 const Button = styled.button`
-margin-left: 7%;
-margin-right: auto;
-margin-top: 40px;
-z-index:1;
+  margin-left: 7%;
+  margin-right: auto;
+  margin-top: 40px;
+  z-index:1;
   Background-color: #212121;
   font-family: Montserrat;
   font-style: normal;

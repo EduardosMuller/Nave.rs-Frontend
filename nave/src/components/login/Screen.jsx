@@ -12,7 +12,7 @@ background: #FFFFFF;
 `
 export default () =>
   <Screen >
-    <Form></Form>
+    <Form ></Form>
   </Screen>
 
 

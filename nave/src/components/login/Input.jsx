@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 
 const Input = styled.input`
@@ -21,11 +21,16 @@ box-sizing: border-box;
   height: 40px;  
 };
 `
-export default (props) =>
-  <Input
-    onChange={e => props.setType(e.target.value)}
-    type={props.type}
-    placeholder={props.placeholder}
-    value={props.value}
-    required>
-  </Input>
+
+export default (props) => {
+  const [pass, setPass] = useState("");
+  return (
+    <Input
+      onChange={e => setPass(e.target.value)}
+      type={props.type}
+      placeholder={props.placeholder}
+      value={props.value}
+      required>
+    </Input>
+  )
+}

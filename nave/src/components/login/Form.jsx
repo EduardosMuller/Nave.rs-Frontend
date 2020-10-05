@@ -22,14 +22,14 @@ border-shadow: 2px 2px black
 
 export default () => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [pass, setPass] = useState("");
 
   const history = useHistory()
 
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const response = await api.post("users/login", { email, password });
+      const response = await api.post("users/login", { email, pass });
       login(response.data.token);
       history.pushState("/home")
     }
@@ -50,11 +50,11 @@ export default () => {
           value={email} />
         <Label for="password"></Label>
         <Input
-          onChange={e => setPassword(e.target.value)}
+          onChange={e => setPass(e.target.value)}
           type="password"
           placeholder="Digite seu password..."
           name="password"
-          value={password} />
+          value={pass} />
         <Button></Button>
       </Form>
 
