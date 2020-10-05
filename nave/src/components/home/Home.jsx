@@ -8,7 +8,7 @@ export default () =>
     <Navbar />
     <Container>
       <H1>Navers</H1>
-      <Link to="/home/create"><Button type="submit">Adicionar Navers</Button></Link>
+      <Link to="/create"><Button type="submit">Adicionar Navers</Button></Link>
     </Container>
 
   </>

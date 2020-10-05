@@ -7,19 +7,20 @@ import api from "../../api/Api"
 
 export default () => {
   const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
+  const [password, setPassword] = useState("");
 
   const history = useHistory()
 
   async function handleSubmit(e) {
     e.preventDefault();
+    console.log(e)
     try {
-      const response = await api.post("users/login", { email, pass });
+      const response = await api.post("/users/login", { email, password });
       login(response.data.token);
-      history.pushState("/home")
+      history.push("/home")
     }
     catch (err) {
-      console.error("Erro ao tentar realizar o login, tente novamente!")
+      console.error(err)
     }
   }
   return (
@@ -31,16 +32,14 @@ export default () => {
           onChange={e => setEmail(e.target.value)}
           type="email"
           placeholder="E-mail"
-          name="email"
           value={email} />
         <Label htmlFor="password">Password</Label>
         <Input
-          onChange={e => setPass(e.target.value)}
+          onChange={e => setPassword(e.target.value)}
           type="password"
           placeholder="Password"
-          name="password"
-          value={pass} />
-        <Button>Entrar</Button>
+          value={password} />
+        <Button type="submit">Entrar</Button>
       </Form>
 
     </Container>
