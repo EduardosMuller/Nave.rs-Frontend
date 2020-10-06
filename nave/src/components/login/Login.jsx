@@ -15,8 +15,9 @@ export default () => {
     e.preventDefault();
     console.log(e)
     try {
-      const response = await api.post("/users/login", { email, password });
+      const response = await api.post("users/login", { email, password });
       login(response.data.token);
+      console.log(response)
       history.push("/home")
     }
     catch (err) {

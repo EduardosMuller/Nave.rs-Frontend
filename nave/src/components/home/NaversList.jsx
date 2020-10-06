@@ -3,7 +3,7 @@ import { FaPen, FaTrash } from "react-icons/fa";
 import api from "../../api/Api"
 import { Link } from "react-router-dom"
 
-export default () => {
+const NaversList = () => {
 
   const [navers, setNavers] = useState([])
   const [id, setId] = useState("")
@@ -18,11 +18,13 @@ export default () => {
           setNavers(res.data);
           setId([...id, ...res.data]);
           setLoad(true);
+
         }
       })
       .catch(err => {
         setError(err.message);
         setLoad(true);
+        console.log(err)
       })
 
     return () => {
@@ -30,4 +32,25 @@ export default () => {
     }
   }, [id]);
 
-}
+  return (
+    <>
+      { load ? (<ul>
+        {error ? <li>{error.message}</li> : navers.map(navers => {
+          return (
+            <div key={navers.id}>
+              <img src={navers.url} alt="Naver Image Profile" width="281" height="281" />
+              <p>{navers.name}</p> <p>{navers.job_role}</p>
+              <Link to={`/${navers.id}`} type="submit"><FaTrash size={18} /></Link>
+              <Link to={`/update/${navers.id}`}><FaPen size={18} /></Link>
+            </div>
+          )
+        })}
+      </ul>) : (
+          <div>Loading...</div>
+        )}
+    </>
+  )
+};
+
+export default NaversList;
+
