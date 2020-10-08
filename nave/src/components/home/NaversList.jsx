@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { FaPen, FaTrash } from "react-icons/fa";
-import api from "../../api/Api"
-import { Link } from "react-router-dom"
-
+import api from "../../api/Api";
+import { Link } from "react-router-dom";
+import { Card, Column } from "./styles";
 const NaversList = () => {
 
   const [navers, setNavers] = useState([])
@@ -37,12 +37,14 @@ const NaversList = () => {
       { load ? (<ul>
         {error ? <li>{error.message}</li> : navers.map(navers => {
           return (
-            <div key={navers.id}>
-              <img src={navers.url} alt="Naver Image Profile" width="281" height="281" />
-              <p>{navers.name}</p> <p>{navers.job_role}</p>
-              <Link to={`/${navers.id}`} type="submit"><FaTrash size={18} /></Link>
-              <Link to={`/update/${navers.id}`}><FaPen size={18} /></Link>
-            </div>
+            <Column>
+              <Card key={navers.id}>
+                <img src={navers.url} alt="Naver Image Profile" width="281" height="281" />
+                <p>{navers.name}</p> <p>{navers.job_role}</p>
+                <Link to={`/${navers.id}`} type="submit"><FaTrash size={18} /></Link>
+                <Link to={`/update/${navers.id}`}><FaPen size={18} /></Link>
+              </Card>
+            </Column>
           )
         })}
       </ul>) : (

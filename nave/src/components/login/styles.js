@@ -4,9 +4,17 @@ import styled from "styled-components";
 export const Container = styled.div`
 padding: 0;
 margin: 0;
-width: 1280px;
-height: 720px;
 background: #FFFFFF;
+box-sizing:border-box;
+display:flex;
+justify-content:center;
+@media (min-width: 481px) and (max-width: 720px) {
+  width: 720px;
+};
+@media screen and (max-width: 480px){
+  width: 480px;
+  
+};
 `;
 export const Form = styled.form`
 width: 448px;
@@ -16,7 +24,12 @@ margin-right:auto;
 margin-top 156px;
 border: 1px solid #212121;
 box-sizing: border-box;
-box-shadow: 2px 2px 5px gray
+box-shadow: 2px 2px 5px gray;
+@media (min-width: 481px) and (max-width: 720px) {
+  width: 380px;
+};
+@media screen and (max-width: 480px){
+  width: 300px;
 `
 export const Input = styled.input`
 margin-left: 7%;
@@ -33,8 +46,8 @@ line-height: 24px;
 font-family: Montserrat;
 
 @media (min-width: 481px) and (max-width: 720px) {
-  margin-left:16.5%;
-  width: 300px;
+  
+  width: 86%;
   height: 40px;
 };
 @media screen and (max-width: 480px){
@@ -55,7 +68,7 @@ font-size: 14px;
 line-height: 18px;
 color:#212121;
 @media (min-width: 481px) and (max-width: 720px) {
-    margin-left:16.5%;
+ 
   };
   @media screen and (max-width: 480px){
     margin-left: 10%;
@@ -85,8 +98,8 @@ export const Button = styled.button`
   };
 
   @media (min-width: 481px) and (max-width: 720px) {
-    margin-left:16.5%;
-    width: 300px;
+   
+    width: 86%;
     height: 40px;
   };
   @media screen and (max-width: 480px){
@@ -95,8 +108,12 @@ export const Button = styled.button`
     height: 40px;  
   };
 `;
-
+export const ImgDiv = styled.div`
+display:flex;
+justify-content:center;`
+  ;
 export const Logo = styled.img`
-margin: 10% 22% 0;
-height: 60px
+margin: 10% 0 0;
+height: 60px;
 `;
+

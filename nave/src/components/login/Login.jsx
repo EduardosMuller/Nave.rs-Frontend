@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Input, Button, Logo, Label, Form } from './styles'
+import { Container, Input, Button, ImgDiv, Logo, Label, Form } from './styles'
 import logo from "../../assets/logo.png"
 import { login } from "../../api/Auth"
 import { useHistory } from "react-router-dom"
@@ -27,7 +27,9 @@ export default () => {
   return (
     <Container>
       <Form onSubmit={handleSubmit}>
-        <Logo src={logo} alt="Nave.rs Logo" />
+        <ImgDiv>
+          <Logo src={logo} alt="Nave.rs Logo" />
+        </ImgDiv>
         <Label htmlFor="email">E-mail</Label>
         <Input
           onChange={e => setEmail(e.target.value)}

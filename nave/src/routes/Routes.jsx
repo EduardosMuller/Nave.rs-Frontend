@@ -2,8 +2,8 @@ import React from "react"
 import { BrowserRouter, Switch, Route } from "react-router-dom"
 import Login from "../components/login/Login"
 import Home from "../components/home/Home"
-import Create from "../components/create/Create"
-import Update from "../components/update/Update"
+import Create from "../components/createNaver/Create"
+import Update from "../components/updateNaver/Update"
 
 export default () =>
 
