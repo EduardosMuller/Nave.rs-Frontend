@@ -3,7 +3,7 @@ import { FaPen, FaTrash } from "react-icons/fa";
 import api from "../../api/Api";
 import { Link } from "react-router-dom";
 import { BtnDelete, CardImg, CardH3, CardH5, List, Card } from "./styles";
-import Modal from "../modal/Modal"
+import Modal from "../../components/modal/Modal"
 
 export default () => {
   const [modalVisible, setModalVisible] = useState(false);

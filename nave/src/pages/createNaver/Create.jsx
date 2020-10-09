@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { FiChevronLeft } from "react-icons/fi";
 import { Header, H1, Container, FormContainer, Input, Group, Button, Label, Form } from './styles';
-import Navbar from "../navbar/Navbar";
+import Navbar from "../../components/navbar/Navbar";
 import api from "../../api/Api";
-import Modal from "../modal/Modal"
+import Modal from "../../components/modal/Modal"
 
 
 export default () => {

@@ -1,5 +1,5 @@
 import React from "react"
-import Navbar from "../navbar/Navbar"
+import Navbar from "../../components/navbar/Navbar"
 import { Section, H1, Button, Body } from "./styles"
 import { Link } from "react-router-dom"
 import NaverList from "./NaversList"
