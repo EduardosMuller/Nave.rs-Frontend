@@ -17,7 +17,12 @@ export const Nav = styled.nav`
   text-decoration: none;
   color: #000000;
   margin-right: 35px;
-
+  transition:0.4s
+  }
+  a:hover{
+    transform: scale(1.3);
+    transition: 0.4s;
+  
   }
 
   `

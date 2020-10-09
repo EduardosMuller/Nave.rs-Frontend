@@ -108,6 +108,7 @@ export const Button = styled.button`
   };
 `;
 
+
 export const H1 = styled.h2`
 font-family: Montserrat;
 font-style: normal;
@@ -123,7 +124,11 @@ margin-left:-200px;
 width:100%;
 height:50px;
 align-items: center;
+a, a:visited, a:hover, a:active {
+  color: inherit
+}
 @media only screen and (max-width:680px){
   margin-left: 0;
+  
 }
 `;

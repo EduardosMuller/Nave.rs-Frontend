@@ -68,7 +68,7 @@ export default () => {
     try {
       await api.post("navers", newNaver);
       handleModalVisible();
-      setTimeout(() => history.push("/home"), 1000);
+      setTimeout(() => history.push("/home"), 2000);
     } catch (e) {
       setLoad(false);
       setErr(true);
@@ -149,7 +149,21 @@ export default () => {
               <Button type="submit">{load ? "Criando" : "Salvar"}</Button>
             </Group>
           </Form>
+          {err && (
+            <p style={{ textAlign: "center", color: "#FF0000" }}>
+              Ocorreu um erro, verifique se todos os dados estão corretos!
+            </p>
+          )}
+          {UrlErr && (
+            <p style={{ textAlign: "center", color: "#FF0000" }}>{UrlTextErr}</p>
+          )}
         </FormContainer>
+
+        <Modal visible={modalVisible} setVisible={setModalVisible} buttons={false}>
+          Naver criado,Naver criado com sucesso!
+      </Modal>
+
+
       </Container>
     </>
   )

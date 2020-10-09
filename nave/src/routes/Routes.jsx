@@ -12,7 +12,7 @@ export default () =>
       <Route path="/" exact component={Login} />
       <Route path="/home" component={Home} />
       <Route path="/create" component={Create} />
-      <Route path="/update" component={Update} />
+      <Route path="/update/:id" component={Update} />
     </Switch>
   </BrowserRouter>
 
