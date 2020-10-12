@@ -1,9 +1,9 @@
 import React from "react"
 import { BrowserRouter, Switch, Redirect, Route } from "react-router-dom"
-import Login from "../components/login/Login"
-import Home from "../components/home/Home"
-import Create from "../components/createNaver/Create"
-import Update from "../components/updateNaver/Update"
+import Login from "../pages/login/Login"
+import Home from "../pages/home/Home"
+import Create from "../pages/createNaver/Create"
+import Update from "../pages/updateNaver/Update"
 import { authOK } from "../api/Auth"
 
 const PrivateRoute = ({ component: Component, ...rest }) => (

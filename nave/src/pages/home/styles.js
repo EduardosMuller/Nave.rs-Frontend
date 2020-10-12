@@ -50,20 +50,20 @@ export const Body = styled.div`
   max-width: 1600px;
   border: 1px solid #ccc;
   display: flex;
-  
   flex-wrap: wrap;
 `
 export const List = styled.ul`
-ul.list{
-textAlign: center;
-paddingInlineStart: 0px; 
-display: content
-}
+text-align: center;
+display:contents!important;
+min-width:300px;
+width:1400px;
 `;
-export const Card = styled.div`
+
+export const Card = styled.div``
+
+export const CardBody = styled.div`
   margin:32px;
   text-align:left;
-
 
 @media (min-width:721px) and (max-width:980px){
   width:30vw;
@@ -86,7 +86,7 @@ a, a:visited, a:hover, a:active {
   color: inherit
 }
 svg{
-  transition:0.4s
+  transition:0.4s;
 }
 svg:hover{
   transform: scale(1.5);
@@ -130,7 +130,7 @@ font-family: Montserrat;
 margin-bottom: 5px;
 `;
 
-export const CardBody = styled.div`
+export const ModalCard = styled.div`
 margin: 32px 32px 0;
 margin-bottom: 48px;
 width: 281px;
@@ -143,6 +143,7 @@ export const CardImg = styled.img`
   height:281px;
   object-fit:cover;
   -webkit-filter: grayscale(100%); 
-  filter: grayscale(100%)
+  filter: grayscale(100%);
+    cursor: pointer;
 `;
 

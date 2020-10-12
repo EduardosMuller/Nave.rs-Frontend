@@ -57,7 +57,7 @@ export default ({ match }) => {
       let admissionDate = res.data.admission_date.split("T");
       let birthdayDate = res.data.birthdate.split("T");
       setName(res.data.name);
-      setJob(res.data.jobadmissionDate_role);
+      setJob(res.data.job_role);
       setAdmission(admissionDate[0]);
       setBirthdate(birthdayDate[0]);
       setProject(res.data.project);
@@ -79,8 +79,9 @@ export default ({ match }) => {
     };
 
     try {
-      await api.post(`navers/${match.params.id}`, naver);
+      await api.put(`navers/${match.params.id}`, naver);
       handleModalVisible();
+      console.log(naver)
       setTimeout(() => history.push("/home"), 1500);
     } catch (e) {
       setLoad(false);

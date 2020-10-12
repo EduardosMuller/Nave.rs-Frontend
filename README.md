@@ -2,8 +2,8 @@
 
 ## Screenshots:
 
-<img src="./src/assets/project/page1.png">
-<img src="./src/assets/project/page2.png">
+<img src="./src/assets/screen1.png">
+<img src="./src/assets/screen2.png">
 
 ## Tecnologias utilizadas:
 ```
@@ -48,6 +48,7 @@ senha: 9876321
 ## Dificuldades durante a execução do projeto
 
 Encontrei um obstáculo enquanto tentava setar o update dos navers, um erro era gerado quando ocorria a montagem dos dados e na hora do retorno á página inicial, mas foram resolvidos após uma longa pesquisa sobre esse possivel erro.
+Outro obstáculo que me fez pesquisar durante um bom tempo, foi a implementação do ModalCard, mesmo sendo um componente parecido com o Modal convencional usado, nele senti um pouco mais necessário entender todo o processo de formatação do mesmo.
 
 
 

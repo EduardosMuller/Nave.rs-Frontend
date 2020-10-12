@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { FaPen, FaTrash } from "react-icons/fa";
+import { FiX } from "react-icons/fi";
 import api from "../../api/Api";
 import { Link } from "react-router-dom";
-import { BtnDelete, CardImg, CardH3, CardH5, List, Card } from "./styles";
+import { BtnDelete, CardImg, CardH3, CardH5, List, CardBody } from "./styles";
 import Modal from "../../components/modal/Modal"
+import ModalCard from "../../components/modal/modalCard/ModalCard"
 
 export default () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [idModal, setIdModal] = useState("");
-
   const [cardVisible, setCardVisible] = useState(false);
   const [idCard, setIdCard] = useState("");
-
   const [modalVisibleDelete, SetModalDelete] = useState(false);
+  const [navers, setNavers] = useState([]);
+  const [id, setID] = useState("");
+  const [load, setLoad] = useState(false);
+  const [err, setErr] = useState("");
 
   const handleCardVisible = (id) => {
     setIdCard(id);
@@ -32,11 +36,6 @@ export default () => {
     setModalVisible(false);
   };
 
-  const [navers, setNavers] = useState([]);
-  const [id, setID] = useState("");
-  const [load, setLoad] = useState(false);
-  const [err, setErr] = useState("");
-
   useEffect(() => {
     let mounted = true;
     api.get("navers")
@@ -55,7 +54,7 @@ export default () => {
     return () => {
       mounted = false;
     };
-  }, []);
+  }, [navers]);
 
   async function deleteNavers(id) {
     try {
@@ -63,7 +62,7 @@ export default () => {
       setNavers(navers.filter((navers) => navers.id !== id));
       closeModal();
       handleModalDelete();
-      setTimeout(() => window.location.reload(), 1000);
+      setTimeout(() => window.location.reload(), 1500);
     } catch {
       alert("Falha ao deletar Naver!");
     }
@@ -77,17 +76,14 @@ export default () => {
           ) : (
               navers.map((navers) => {
                 return (
-
-
-                  <Card key={navers.id}>
+                  <CardBody key={navers.id}>
                     <CardImg
                       onClick={() => handleCardVisible(navers.id)}
                       width="281"
                       height="281"
                       src={navers.url}
-                      alt={`${navers.name} Foto`}
+                      alt={`${navers.name} Image`}
                     />
-
                     <CardH3>{navers.name}</CardH3>
                     <CardH5>{navers.job_role}</CardH5>
                     <BtnDelete onClick={() => handleModalVisible(navers.id)}>
@@ -96,7 +92,7 @@ export default () => {
                     <Link to={`/update/${navers.id}`}>
                       <FaPen size={18}></FaPen>
                     </Link>
-                  </Card>
+                  </CardBody>
 
                 );
               })
@@ -104,10 +100,10 @@ export default () => {
         </List>
       ) : (
           <div>
-            <i
-              style={{ position: "absolute", top: "50%", left: "50%", fontSize: "5rem" }}
-              className="fas fa-spinner"
-            ></i>
+            <FiX
+              style={{ position: "absolute", top: "50%", left: "50%", fontSize: "80px" }}
+
+            ></FiX>
           </div>
         )}
 
@@ -118,15 +114,15 @@ export default () => {
         deleteNavers={deleteNavers}
         id={idModal}
       >
-        Excluir Naver,Tem certeza que deseja excluir este Naver?
+        Excluir Naver , Tem certeza que deseja excluir este Naver?
     </Modal>
 
       <Modal visible={modalVisibleDelete} setVisible={SetModalDelete} buttons={false}>
-        Naver excluído,Naver excluído com sucesso!
+        Naver excluído , Naver excluído com sucesso!
     </Modal>
 
       {cardVisible && (
-        <Card
+        <ModalCard
           visible={cardVisible}
           setVisible={setCardVisible}
           id={idCard}
