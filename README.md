@@ -2,8 +2,8 @@
 
 ## Screenshots:
 
-<img src="./src/assets/screen1.png">
-<img src="./src/assets/screen2.png">
+<img src=".nave/src/assets/screen1.png">
+<img src=".nave/src/assets/screen2.png">
 
 ## Tecnologias utilizadas:
 ```
